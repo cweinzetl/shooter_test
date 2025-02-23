@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://blb2nlwe0l4oq"]
+
+[ext_resource type="Script" path="res://controllers/scripts/player_controller.gd" id="1_kpafh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vt16p"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_kpafh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03433, 0)
+shape = SubResource("CapsuleShape3D_vt16p")
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]

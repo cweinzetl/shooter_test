@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjrr4at2sgm3i"]
+
+[ext_resource type="PackedScene" uid="uid://blb2nlwe0l4oq" path="res://controllers/player_controller.tscn" id="1_jrcgd"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_105fo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5vqym"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxxmp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ki3iy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+camera_attributes = SubResource("CameraAttributesPhysical_105fo")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_5vqym")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_mxxmp")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78908, 0.989175, -8.05311)
+mesh = SubResource("BoxMesh_ki3iy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/StaticBody3D"]
+shape = SubResource("BoxShape3D_mxxmp")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_jrcgd")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57374, 11.6395, -5.39799)
