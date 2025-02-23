@@ -33,7 +33,7 @@ mesh = SubResource("BoxMesh_ki3iy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/StaticBody3D"]
 shape = SubResource("BoxShape3D_mxxmp")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_jrcgd")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57374, 11.6395, -5.39799)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_jrcgd")]
